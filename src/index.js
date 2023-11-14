@@ -226,25 +226,19 @@ function startTimer() {
 *
 */
 function whack(event) {
-  if (time > 0){
+  console.log("whack!")
   updateScore();
-  let hole = event.srcElement.parentElement;
-  toggleVisibility(hole);
-  }
-}
+};
 
-/**
-*
-* Adds the 'click' event listeners to the moles. See the instructions
-* for an example on how to set event listeners using a for loop.
-*/
+
 function setEventListeners(){
-  // TODO: Write your code here
   moles.forEach(
     mole => mole.addEventListener('click', whack)
   );
   return moles;
 }
+
+setEventListeners();
 
 /**
 *
