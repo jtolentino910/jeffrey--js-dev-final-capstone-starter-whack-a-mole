@@ -121,13 +121,13 @@ function gameOver() {
 function showUp() {
   // let delay = randomInteger(600, 1200); // TODO: Update so that it uses setDelay()
   // const hole = chooseHole();  // TODO: Update so that it use chooseHole()
-  holes.forEach((hole) => {
-    let delay = randomInteger(600, 1200);
+  const hole = chooseHole(holes);
+  let delay = randomInteger(600, 1200);
     showAndHide(hole, delay);
-  })
+  }
 
   // return showAndHide(hole, delay);
-}
+
 
 /**
 *
@@ -140,19 +140,11 @@ function showUp() {
 function showAndHide(hole, delay){
   // TODO: call the toggleVisibility function so that it adds the 'show' class.
   toggleVisibility(hole);
-  const timeoutID = setInterval(() => {
+  const timeoutID = setTimeout(() => {
     // TODO: call the toggleVisibility function so that it removes the 'show' class when the timer times out.
     toggleVisibility(hole);
-    
-    // This prevents the mole from being toggled again (i.e. this closes the interval)
-    if (time === 0) {
-      if (hole.classList.contains('show')) {
-        toggleVisibility(hole);
-      }
-      clearTimeout(timeoutID)
-    }
-    
-  }, delay); // TODO: change the setTimeout delay to the one provided as a parameter
+    gameOver();
+    }, delay); // TODO: change the setTimeout delay to the one provided as a parameter
   return timeoutID;
 }
 
