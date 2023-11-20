@@ -1,3 +1,5 @@
+@media only screen and (max-width: 500px) {
+
 html {
   /*background: url('../assets/background.png') no-repeat center center fixed;*/
   background: url('https://github.com/Thinkful-Ed/js-dev-final-capstone-starter/blob/main/assets/background.png?raw=true') no-repeat center center fixed;
@@ -8,13 +10,6 @@ html {
   background-size: cover;
   z-index:0;
   overflow: hidden;
-}
-
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  [class*="col-"] {
-    width: 100%;
-  }
 }
 
 h1 {
@@ -90,4 +85,6 @@ h2 {
 .hole, .show > .mole {
   top: 0;
   transform: scale(1.1);
+}
+
 }
